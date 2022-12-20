@@ -6,7 +6,8 @@ public class Ex1 {
         System.out.println(arr[0] + "//" + arr[2]);
     }
     public static void replaceBlocks(String docNum){
-        String replace = docNum.replace("a","*").replace("b","*");
+        String replace = docNum.replace("a","*")
+                .replace("b","*");
         System.out.println(replace);
     }
     //public static void replaceBlocks1(String docNum){
@@ -19,6 +20,15 @@ public class Ex1 {
         String[] arr = docNum.split("-");
         String string = arr[1] +"/" + arr[3] + "/" + arr[4].charAt(0) + "/" + arr[4].charAt(2);
         System.out.println(string);
+    }
+    public static void stringBuilder(String docNum){
+        StringBuilder sb = new StringBuilder(docNum);
+        sb.replace(0,5,"/")
+                .replace(4,10,"/")
+                .replace(8,9,"/")
+                .replace(10,11,"/")
+                .deleteCharAt(12);
+        System.out.println("Letters:" + sb);
     }
     public static void printContainsAbc(String docNum){
         System.out.println(docNum.toLowerCase().contains("abc") || docNum.toUpperCase().contains("ABC"));
